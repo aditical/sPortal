@@ -7,7 +7,7 @@
                 <nav class="nav-primary hidden-xs">
                   <ul class="nav">
                     <li  class="active">
-                      <a href="teacher.html"   class="active">
+                      <a href="index.php"   class="active">
                         <i class="fa fa-dashboard icon">
                           <b class="bg-danger"></b>
                         </i>
@@ -15,7 +15,7 @@
                       </a>
                     </li>
                     <li >
-                      <a href= "profile.html"  >
+                      <a href= "#"  >
                         <i class="fa fa-user icon">
                           <b class="bg-warning"></b>
                         </i>                       
@@ -23,7 +23,7 @@
                       </a>                    
                     </li>
                     <li >
-                      <a href= "news.html"  >
+                      <a href= "news.php"  >
                         <i class="fa fa-list-alt icon">
                           <b class="bg-info"></b>
                         </i>                       
@@ -31,7 +31,7 @@
                       </a>                    
                     </li>
                     <li >
-                      <a href="notes.html"  >
+                      <a href="note.php"  >
                         <i class="fa fa-pencil-square icon">
                           <b class="bg-success"></b>
                         </i>                       
@@ -39,7 +39,7 @@
                       </a>                     
                     </li>
                     <li >
-                      <a href="classes.html"  >
+                      <a href="#"  >
                         <i class="fa fa-book icon">
                           <b class="bg-warning"></b>
                         </i>                      
@@ -47,7 +47,7 @@
                       </a>                      
                     </li>                    
                     <li >
-                      <a href="queries.html"  >
+                      <a href="#"  >
                         <b class="badge bg-danger pull-right"></b>
                         <i class="fa fa-question-circle icon">
                           <b class="bg-primary dker"></b>
@@ -56,7 +56,7 @@
                       </a>
                     </li>
                     <li >
-                      <a href="notices.html"  >
+                      <a href="notices.php"  >
                         <i class="fa fa-files-o icon">
                           <b class="bg-info"></b>
                         </i>
@@ -64,7 +64,7 @@
                       </a>
                     </li>
                     <li >
-                        <a href="notifications.html"  >
+                        <a href="notifications.php"  >
                           <i class="fa fa-bell icon">
                             <b class="bg-danger"></b>
                           </i>
@@ -72,7 +72,7 @@
                         </a>
                       </li>
                       <li >
-                          <a href="assignments.html"  >
+                          <a href="assignments.php"  >
                             <i class="fa fa-pencil icon">
                               <b class="bg-primary"></b>
                             </i>

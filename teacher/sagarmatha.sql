@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2018 at 03:24 PM
+-- Generation Time: Jul 11, 2018 at 05:23 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -89,9 +89,8 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `batch`, `subject`, `author`, `files`, `description`, `date`, `filePath`, `fileType`, `fileSize`) VALUES
-(14, '3', 'java', 'me', 'ConnectifyLogs_Anjel.zip', 'nothing bro', '18.07.09', '', '', ''),
-(17, '2', 'aaa', 'ANGEL ACHARYA', '5b43795f5b1752.56628293.png', 'this is note of IT', '18.07.09', 'uploads/5b43795f5b1752.56628293.png', ' image/png', ' 686946'),
-(18, '2', 'java', 'dj', '5b44d34aeddff9.42868839.jpg', 'testing testing', '18.07.10', 'uploads/5b44d34aeddff9.42868839.jpg', ' image/jpeg', ' 24981');
+(25, '071', 'java', 'aditi acharya', '5b46204dd38fb4.65378957.zip', 'this is npthing', '18.07.11', 'uploads/5b46204dd38fb4.65378957.zip', ' application/x-zip-compressed', ' 3823'),
+(26, '073', 'hh', 'mr.kd', '5b46206e20eba1.97858758.png', 'testing testing', '18.07.11', 'uploads/5b46206e20eba1.97858758.png', ' image/png', ' 45655');
 
 -- --------------------------------------------------------
 
@@ -166,7 +165,7 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `students`
