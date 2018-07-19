@@ -31,7 +31,7 @@
 		<div class="col-lg-9">
 			<div class="panel panel-default">
 				<div class="panel-heading main-color-bg">
-					<h3 class="panel-title">New Event</h3>
+					<h3 class="panel-title">News</h3>
 				</div>
 				<div class="panel-body">
 					<form action="../admin/edit.php?edit_form=<?php echo $edit_id1; ?>" method="POST" enctype="multipart/form-data">
@@ -46,14 +46,14 @@
 						<div class="form-group">
 							<label>Upload an Image</label>
 							<input class="form-control"  type="file" name="image">
-							<img src="../events_images/<?php echo $image; ?>" width="100" height"100">
+							<img src="/events_images/<?php echo $image; ?>" width="100" height"100">
 						</div>
 						<div class="form-group">
 							<label>Post Content</label>
 							<textarea name="content" class="form-control" ><?php echo $content; ?></textarea>
 						</div>
 						<div class="modal-footer">        
-							<button type="submit" class="btn btn-primary" value="Insert Event" name="update">Update Event</button>
+							<button type="submit" class="btn btn-primary" value="Insert Event" name="update">Update </button>
 						</div>
 		<?php
 			} 
@@ -76,8 +76,8 @@
 		$post_image_type = $_FILES['image']['type'];
 		$post_image_size = $_FILES['image']['size'];
 		$post_image_tmp = $_FILES['image']['tmp_name'];
-		$path="../events_images/$post_image";
-		move_uploaded_file($post_image_tmp, destination);
+		$path="events_images/$post_image";
+		move_uploaded_file($post_image_tmp, $path);
 		$connect = mysqli_connect("localhost", "root", "", "sagarmatha");
 		$query="UPDATE events set title = '$post_title', author = '$post_author', image = '$post_image', content = '$post_content', date = '$post_date' WHERE id = '$update_id'";
 		if (mysqli_query($connect,$query)) {			

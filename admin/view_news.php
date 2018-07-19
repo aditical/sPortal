@@ -53,7 +53,7 @@
 								<td><?php echo $title; ?></td>
 								<td><?php echo $date; ?></td>
 								<td><?php echo $author; ?></td>
-								<td><center><img src="../student_image/<?php echo $image;?>" width="50" height="50"/></center></td>
+								<td><center><img class ="img-responsive" src="images/<?php echo $image;?>" width="50" height="50" alt=""/></center></td>
 								<td><?php echo $content; ?></td>
 								<td><a href="edit.php?edit=<?php echo $id;?>">Edit</a></td>
 								<td><a href="delete.php?del=<?php echo $id;?>" onclick="return confirm('Do you want to delete this event?')">Delete</a></td>

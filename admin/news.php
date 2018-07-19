@@ -1,6 +1,6 @@
 <html>
 	<head>
-			<title>New Event</title>
+			<title>New news</title>
 			<link rel ="stylesheet" href= "../bootstrap/css/bootstrap.css" >
 			<script src ="../jquery.js"> </script>
 			<script src ="../bootstrap/js/bootstrap.js"></script>
@@ -17,7 +17,7 @@
 		<div class="col-lg-9">	
 				<div class="panel panel-default">
 					<div class="panel-heading main-color-bg">
-						<h3 class="panel-title">New Event</h3>
+						<h3 class="panel-title">News</h3>
 					</div>
 					<div class="panel-body">
 						<form action="events.php" method="POST" enctype="multipart/form-data">			
@@ -38,7 +38,7 @@
 								<textarea name="content" class="form-control"></textarea>
 							</div>				
 							<div class="modal-footer">        
-								<button type="submit" class="btn" value="Insert Event" name="submit">Insert Event</button>
+								<button type="submit" class="btn" value="Insert Event" name="submit">Submit</button>
 							</div>
 						</form>
 					</div>

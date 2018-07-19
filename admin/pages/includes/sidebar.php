@@ -6,14 +6,18 @@
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
               </a>
               <ul class= "list-group">
-                 <a href="new.php" class="list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Events <span class="badge"></span>
+                 <a href="view_news.php" class="list-group-item"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> News <span class="badge"></span>
                 </a>
-                 <a href="events.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Event <span class="badge"></span>
+                 <a href="news.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add News <span class="badge"></span>
                 </a>
                 <a href="profile.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Profiles <span class="badge"></span>
                 </a>          
-             
+                <a href="events.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Notices <span class="badge"></span>
+                </a><a href="events.php" class="list-group-item"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Notices <span class="badge"></span>
+                </a>
                 <a href="add_student.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add Student<span class="badge"></span>
+                </a>
+                <a href="add_student.php" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add Teachers<span class="badge"></span>
                 </a>
                 <a href="#" class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Notes <span class="badge"></span>
                 </a>

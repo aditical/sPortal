@@ -6,7 +6,7 @@
         <div id="navbar" class="collapse navbar-collapse">          
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Welcome</a></li>
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="../actions/logout.php">Logout</a></li>
           </ul>
         </div>
       </div>
