@@ -1,5 +1,5 @@
 <?php
-require_once '../connections/db.php';
+require_once '../../connections/db.php';
 session_start();
 $loggedUser_name= $_SESSION['loggedUser_name'];
 $loggeduser = $_SESSION['loggedUser'];

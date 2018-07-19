@@ -1,9 +1,14 @@
+<?php
+require_once '../../connections/db.php';
+session_start();
+
+?>
 <html>
     <head> 
         <title>Profiles</title>	
-        <link rel ="stylesheet" href= "../bootstrap/css/bootstrap.css" >
-        <script src ="../jquery.js"> </script>
-        <script src ="../bootstrap/js/bootstrap.js"></script>
+        <link rel ="stylesheet" href= "bootstrap/css/bootstrap.css" >
+        <script src ="jquery.js"> </script>
+        <script src ="bootstrap/js/bootstrap.js"></script>
         <link rel="stylesheet" href="stylee.css" >
     </head>
     <body>
@@ -33,10 +38,10 @@
                         </thead>
                         <tbody>
                             <?php 
-                                $connect = mysqli_connect("localhost", "root", "", "sagarmatha");
+                                
                                 $i=1;
-                                $query = "SELECT * FROM students ORDER BY 1 DESC";
-                                $result = mysqli_query($connect,$query);
+                                $query = "SELECT * FROM users ORDER BY 1 DESC";
+                                $result = mysqli_query($con,$query);
 
                                 while ($row = mysqli_fetch_array($result)) {
                                     $id = $row['id'];

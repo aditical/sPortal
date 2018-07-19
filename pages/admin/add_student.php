@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Sagarmatha Student User</title>
-		<link href="../font-awesome/css/font-awesome.css" rel="stylesheet" />
-		<link rel ="stylesheet" href= "../bootstrap/css/bootstrap.css" >
-		<script src ="../jquery.js"> </script>
-		<script src ="../bootstrap/js/bootstrap.js"></script> 
+		<link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+		<link rel ="stylesheet" href= "bootstrap/css/bootstrap.css" >
+		<script src ="jquery.js"> </script>
+		<script src ="bootstrap/js/bootstrap.js"></script> 
 		<link rel="stylesheet" href="stylee.css" >
 	</head>
 	<body>

@@ -1,9 +1,9 @@
 <html>
 	<head> 
 		<title>View Events</title>	
-		<link rel ="stylesheet" href= "../bootstrap/css/bootstrap.css" >
-		<script src ="../jquery.js"> </script>
-		<script src ="../bootstrap/js/bootstrap.js"></script>
+		<link rel ="stylesheet" href= "bootstrap/css/bootstrap.css" >
+		<script src ="jquery.js"> </script>
+		<script src ="bootstrap/js/bootstrap.js"></script>
 		<link rel="stylesheet" href="stylee.css" >
 	</head>
 	<body>
