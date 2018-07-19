@@ -1,6 +1,12 @@
+<?php
+require_once './../../connections/db.php';
+session_start();
+$loggedUser_name= $_SESSION['loggedUser_name'];
+$loggeduser = $_SESSION['loggedUser'];
+ ?>
 <header class="bg-dark dk header navbar navbar-fixed-top-xs">
       <div class="navbar-header aside-md">      
-        <a href="index1.php" class="navbar-brand" data-toggle="fullscreen"><img src="images/logo.png" class="img-circle">sPortal</a>
+        <a href="teacher_dashboard.php" class="navbar-brand" data-toggle="fullscreen"><img src="images/logo.png" class="img-circle">sPortal</a>
         <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
           <i class="fa fa-cog"></i>
         </a>
@@ -45,7 +51,7 @@
             <span class="thumb-sm avatar pull-left">
               <img src="images/avatar.jpg">
             </span>
-            Keshav Dhami <b class="caret"></b>
+            <?php echo $loggedUser_name; ?><b class="caret"></b>
           </a>
           <ul class="dropdown-menu animated fadeInRight">
             <span class="arrow top"></span>            
@@ -54,7 +60,7 @@
             </li>          
             <li class="divider"></li>
             <li>
-              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+              <a href="./../../actions/logout.php"  >Logout</a>
             </li>
           </ul>
         </li>

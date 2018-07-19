@@ -17,14 +17,15 @@ if (mysqli_num_rows($query) > 0) {
     if ($row['type'] == 'teacher'){
         $_SESSION['loggedUser_name']=$row['name'];
         $_SESSION['loggedUser'] = $row['id'];
-        header('Location: ../pages/teacher_dashboard.php');
+        header('Location: ../pages/teacher/teacher_dashboard.php');
     }
     elseif ($row['type'] == 'admin') {
+        $_SESSION['loggedUser_name']=$row['name'];
         $_SESSION['loggedUser'] = $row['id'];
         header('Location: ../pages/admin/admin_dashboard.php');
     }
     else {
-        $_SESSION['loggedUser'] = $row['id'];
+        $_SESSION['loggedUser'] = $row['name'];
         header('Location: ../pages/student_dashboard.php');
     }
 } else {

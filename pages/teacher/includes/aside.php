@@ -7,7 +7,7 @@
                 <nav class="nav-primary hidden-xs">
                   <ul class="nav">
                     <li  class="active">
-                      <a href="index1.php"   class="active">
+                      <a href="teacher_dashboard.php"   class="active">
                         <i class="fa fa-dashboard icon">
                           <b class="bg-danger"></b>
                         </i>
@@ -24,7 +24,7 @@
                       </a>                    
                     </li>
                     <li >
-                      <a href="note.php"  >
+                      <a href="uploads.php"  >
                         <i class="fa fa-pencil-square icon">
                           <b class="bg-success"></b>
                         </i>                       
@@ -40,7 +40,7 @@
                       </a>                      
                     </li>                    
                     <li >
-                      <a href="queries.php"  >
+                      <a href="#"  >
                         <b class="badge bg-danger pull-right"></b>
                         <i class="fa fa-question-circle icon">
                           <b class="bg-primary dker"></b>
@@ -48,16 +48,9 @@
                         <span>Queries</span>
                       </a>
                     </li>
+                    
                     <li >
-                      <a href="notices.php"  >
-                        <i class="fa fa-files-o icon">
-                          <b class="bg-info"></b>
-                        </i>
-                        <span>Notices</span>
-                      </a>
-                    </li>
-                    <li >
-                        <a href="notifications.php"  >
+                        <a href="#"  >
                           <i class="fa fa-bell icon">
                             <b class="bg-danger"></b>
                           </i>
@@ -65,7 +58,7 @@
                         </a>
                       </li>
                       <li >
-                          <a href="assignments.php"  >
+                          <a href="#"  >
                             <i class="fa fa-pencil icon">
                               <b class="bg-primary"></b>
                             </i>
