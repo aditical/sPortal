@@ -1,3 +1,12 @@
+<?php
+require_once '../../connections/db.php';
+$batch = $_GET['batch'];
+$query = "SELECT id FROM batch WHERE batch= '$batch' ";
+$result = mysqli_query($con,$query);
+$row = mysqli_fetch_array($result);
+$id = $row['id'];
+$bid = $id;
+?>
 <!DOCTYPE html>
 <html lang="en" class="app">
 <head>
@@ -19,7 +28,7 @@
 </head>
 <body>
   <section class="vbox">
-      <?php include 'includes/header.php'?>
+      <?php include 'includes/header.php'?>      
         <section>
       <section class="hbox stretch">
         <!-- .aside -->
@@ -27,9 +36,11 @@
           <!-- /.aside -->
         <section id="content">
         <section class="vbox">
+      
             <header class="header bg-white b-b b-light">
-              <p><big>Batch1</big></p>
+              <p><big> <?php echo $batch; ?></big></p>
             </header>
+        
           <section class="hbox stretch">
             <!-- .aside -->
                         <!-- /.aside -->
@@ -38,18 +49,31 @@
                   <section class="vbox">                    
                     <section class="scrollable">
                     <section class="panel panel-default">
-                        <header class="panel-heading bg-danger lt no-border">
+                       <?php                    
+                        
+                          $sql = "SELECT * FROM posts WHERE batch_id='$id'";
+                          $run = mysqli_query($con, $sql);
+                          while ($row = mysqli_fetch_array($run)){
+                            $id = $row['aid']; 
+                            $name = $row['name'];
+                            $file = $row['file'];
+                            $category = $row['category'];                         
+                      
+                       ?>
+                          <header class="panel-heading bg-danger lt no-border">
                           <div class="clearfix">
                             
                             <div class="clear">
                               <div class="h3 m-t-xs m-b-xs text-white">
-                             Notice
-                                <i class="fa fa-circle text-white pull-right text-xs m-t-sm"></i>                                             
+                              <?php echo $category; ?> 
+                           
+                             <a href="#"> <i class="fa fa-trash-o text-white pull-right text-xs m-t-sm"style="font-size:24px"></i> </a> 
+                             <a href="#"> <i class="fa fa-edit text-white pull-right text-xs m-t-sm" style="font-size:24px"></i> </a>               
                           </div>
+                          <small> <?php echo $name; ?></small><br/>
+                          <small> <?php echo $file; ?></small>
                         </header>
-                        <div class="list-group no-radius alt">
-                         
-                        </div>
+                          <?php } ?>
                       </section>
                     </section>
                   </section>
@@ -62,47 +86,25 @@
               <section class="vbox">
                 <header class="bg-light dk header">
                   <p>Students</p>
-                </header>            
+                </header>    
+                <?php            
+                        $query2 = "SELECT * FROM users WHERE batch_id='$bid' AND type='student' ";
+                        $run = mysqli_query($con, $query2);
+                        while ($row = mysqli_fetch_array($run)){
+                          $id = $row['id']; 
+                          $name = $row['name'];                                               
+                    ?>        
                 <section class="scrollable bg-white">
+                
                   <div class="list-group list-group-alt no-radius no-borders">
-                    <a class="list-group-item" href="#">
+                
+                  <a class="list-group-item" href="#">
                         <i class="fa fa-circle text-success text-xs"></i>
-                        <span>Cris Labiso</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-success text-xs"></i>
-                        <span>Cris Labiso</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-success text-xs"></i>
-                        <span>Cris Labiso</span>
-                    </a>
-                    
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-muted text-xs"></i>
-                        <span>Daniel Sandvid</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-danger text-xs"></i>
-                        <span>Helder Oliveira</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-muted text-xs"></i>
-                        <span>Jeff Broderik</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-muted text-xs"></i>
-                        <span>Jonathan Morina</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-success text-xs"></i>
-                        <span>Mason Yarnell</span>
-                    </a>
-                    <a class="list-group-item" href="#">
-                        <i class="fa fa-circle text-danger text-xs"></i>
-                        <span>Mike Mcalidek</span>
-                    </a>
+                        <span><?php echo $name; ?></span>
+                    </a>   
+                                        
                   </div>
+                  <?php } ?> 
                 </section>
                 
               </section>

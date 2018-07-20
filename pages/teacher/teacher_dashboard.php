@@ -42,14 +42,14 @@ require_once '../../connections/db.php';
                         <i class="fa fa-circle fa-stack-2x text-info"></i>
                         <i class="fa fa-users fa-stack-1x text-white"></i>
                       </span>
-                      <a class="clear" href="view_batch.php">
+                      <a class="clear" href="view_batch.php?batch=<?php echo $batch;?>">
                         <span class="h3 block m-t-xs"><strong><?php echo $batch; ?></strong></span>
                         <small class="text-muted text-uc"><?php echo $total_students; ?></small>
                       </a>
                     </div>    
                     <?php 
 								}
-							?>           
+							?>         
                
                   
                  
