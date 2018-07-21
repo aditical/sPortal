@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -37,24 +37,26 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h3>News</h3>
+								<h3>Notice</h3>
 							</div>
 							<div class="module-body">							
-									<form class="form-horizontal row-fluid" action=../../actions/add_news.php method="POST" enctype="multipart/form-data">
+									<form class="form-horizontal row-fluid" action=../../actions/add_notice.php method="POST" enctype="multipart/form-data">
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Title</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="Type something here..." class="span8"name="title">
-												
+												<input type="text" id="basicinput" placeholder="Type something here..." class="span8"name="title">												
 											</div>
-										</div>	
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Author</label>
+                                        </div>	
+                                        <div class="control-group">
+											<label class="control-label" for="basicinput">Select category</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="Author" class="span8"name="author">
-												
+												<select tabindex="1" data-placeholder="Select here.." class="span8" name="category">
+													<option value="">Select here..</option>
+													<option value="teacher">Teacher</option>
+													<option value="student">Student</option>												
+												</select>
 											</div>
-										</div>
+										</div>									
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Upload an image</label>
 											<div class="controls">
@@ -63,15 +65,14 @@
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="basicinput" >Content</label>
+											<label class="control-label" for="basicinput" >Description</label>
 											<div class="controls">
-												<textarea class="span8" rows="5"name="content"></textarea>
+												<textarea class="span8" rows="5"name="description"></textarea>
 											</div>
 										</div>
-
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" class="btn" value="Insert Event" name="submit">Submit</button>
+												<button type="submit" class="btn" value="Insert Notice" name="submit">Submit</button>
 											</div>
 										</div>
 									</form>
