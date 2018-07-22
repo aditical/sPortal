@@ -32,11 +32,6 @@
             <input type="password" name="txtPassword" id="inputPassword" placeholder="Password" class="form-control input-lg" required>
           </div>
          
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Keep me logged in
-            </label>
-          </div>
           <a href="actions/forgetpwd.php" class="pull-right m-t-xs"><small>Forgot password?</small></a>
           <button type="submit" class="btn btn-primary">login</button>
          
