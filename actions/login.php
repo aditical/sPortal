@@ -17,20 +17,22 @@ if (mysqli_num_rows($query) > 0) {
     if ($row['type'] == 'teacher'){
         $_SESSION['loggedUser_name']=$row['name'];
         $_SESSION['loggedUser'] = $row['id'];
+        $_SESSION['email']=$row['email'];
         header('Location: ../pages/teacher/teacher_dashboard.php');
     }
     elseif ($row['type'] == 'admin') {
         $_SESSION['loggedUser_name']=$row['name'];
         $_SESSION['loggedUser'] = $row['id'];
+        $_SESSION['email']=$row['email'];
         header('Location: ../pages/admin/admin_dashboard.php');
     }
     else {
-        $_SESSION['loggedUser'] = $row['name'];
+        $_SESSION['loggedUser_name'] = $row['name'];
+        $_SESSION['loggedUser'] = $row['id'];
+        $_SESSION['email']=$row['email'];
         header('Location: ../pages/student_dashboard.php');
+        }
+    } else {
+       header('Location: ../index.php?msg=error');
     }
-} else {
-   // echo "Invalide Username or Password<br>";
-    //echo "Redirecting Back in 5 sec";
-    //header('refresh:5; url:../index.php');
-}
- ?>
+      ?>
