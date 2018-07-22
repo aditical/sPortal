@@ -1,5 +1,6 @@
 <?php
 require_once '../../connections/db.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,31 +33,38 @@ require_once '../../connections/db.php';
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Classes</h3>
+                                    News</h3>
                             </div>                           
                             <div class="module-body">
                             <?php                   
-                                $query = "SELECT * FROM batch ";
+                                $query ="SELECT * FROM events ORDER BY 1 DESC";
                                 $result = mysqli_query($con,$query);
                                 while ($row = mysqli_fetch_array($result)) {
-                                $id = $row['id']; 
-                                $batch = $row['batch']; 
-                                $sql = "SELECT * FROM users WHERE type='student' AND batch_id='$id'";
-                                $run = mysqli_query($con, $sql);
-                                $total_students = mysqli_num_rows($run);                     
+                                    $id = $row['id'];
+									$title = $row['title'];
+									$image = $row['image'];
+									$content = substr($row['content'],0,400);
+									$author = $row['author'];
+									$date = $row['date'];                     
                              ?>                             
                                 <div class="row-fluid">
-                                    <div class="span6">
+                                    <div class="span12">
                                         <div class="media user">
                                            
                                             <div class="media-body">
-                                                <h3 class="media-title"> <strong>BATCH </strong>
-                                                <?php echo $batch; ?></h3>
+                                                <h2 class="media-title"> <strong><?php echo $title; ?> </strong>
+                                                </h2>    
+                                                <a href="delete_news.php?del=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
+                                                    <a href="edit_news.php?edit=<?php echo $id;?>" class="   pull-right text-xs m-t-sm"><i class="icon-edit"></i></a>                                            
                                                 <p>
-                                                    <small class="muted"><?php echo $total_students;?> students</small></p>
-                                                <div class="media-option btn-group shaded-icon">
-                                                   
+                                                <div class="pull-left">                                                    
+                                                    <img src="../../storage/<?php echo $image;?>" width="120" height="120"/>                          
                                                 </div>
+                                                    <small class="muted"><?php echo $content;?> .....<a class="text-info" href="#">Read More</a></small></p>
+                                                    <em class="pull-right text-xs">Posted by <span class="text-default"><strong><?php echo $author;?></strong></span></em>
+                                                    <em class="pull-right text-xs">on <span class="text-default"><strong><?php echo $date; ?></strong></span></em> 
+                                                                                       
+                                                    
                                             </div>
                                         </div>
                                     </div>                                 
@@ -65,8 +73,7 @@ require_once '../../connections/db.php';
                                 <br />
                                 <?php 
 								}
-							?>  
-                                
+							?>                      
                                 
                                
                               

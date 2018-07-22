@@ -1,3 +1,9 @@
+<?php
+require_once './../../connections/db.php';
+session_start();
+$loggedUser_name= $_SESSION['loggedUser_name'];
+$loggeduser = $_SESSION['loggedUser'];
+ ?>
  <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                         <i class="icon-reorder shaded"></i></a><a class="brand" href="index.html">Admin Dashboard </a>
@@ -13,12 +19,12 @@
                                 </form>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="images/user.png" class="nav-avatar" />
+                                <?php echo $loggedUser_name; ?>
                                 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Profile</a></li>
-                                                                 
+                                    <li><a href="#">Profile</a></li>                                                                 
                                     <li class="divider"></li>
-                                    <li><a href="#">Logout</a></li>
+                                    <li><a href="../../actions/logout.php">Logout</a></li>
                                 </ul>
                             </li>                            
                         </ul>

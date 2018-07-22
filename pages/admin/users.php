@@ -1,8 +1,6 @@
 ﻿<?php
 require_once '../../connections/db.php';
-session_start();
-//$loggedUser_name= $_SESSION['loggedUser_name'];
-//$loggeduser = $_SESSION['loggedUser'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -112,11 +110,7 @@ session_start();
         <!--/.container-->
     </div>
     <!--/.wrapper-->
-    <div class="footer">
-        <div class="container">
-            <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
-        </div>
-    </div>
+    <?php include 'includes/footer.php'?>
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

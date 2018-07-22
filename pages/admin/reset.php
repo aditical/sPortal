@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +78,7 @@
 			</div>
 		</div><!--/.container-->
 	</div><!--/.wrapper-->
-
+	<?php include 'includes/footer.php'?>
 		
 		
 		

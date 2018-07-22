@@ -1,5 +1,4 @@
 <?php
-session_start();
 include '../../connections/db.php';
 if (isset($_POST['add'])) {
     $name = $_POST["name"];   

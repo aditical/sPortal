@@ -3,22 +3,27 @@ require_once '../connections/db.php';
 session_start();
 //$loggedUser_name= $_SESSION['loggedUser_name'];
 //$loggeduser = $_SESSION['loggedUser'];
-?>
+if ($con->connect_error) {
+	die("Connection failed: " . $conn->connect_error);
+ }
+   echo "Connected successfully";
+ ?>
+
 <?php
 	if(isset($_POST['submit'])){
-		if ($_POST['title']=='' or $_POST['description']=='' or $_POST['category']==''){
+		if ($_POST['title']=='' or $_POST['description']==''){
 			echo ("<script>alert('FILL All THE FIELDS')</script>");
 			exit();
 		}
 		else{
-			$title=$_POST['title'];			
-			$description=$_POST['description'];
+			$title=$_POST['title'];
+			$category= $_POST['category'];					
 			$image_name=$_FILES['image']['name'];
 			$image_type=$_FILES['image']['type'];
 			$image_size=$_FILES['image']['size'];
 			$image_tmp=$_FILES['image']['tmp_name'];
-            $path="../storage/$image_name";
-            $category=$_POST['category'];
+			$path="../storage/$image_name";
+			$description=$_POST['description'];
 			$date=date('y.m.d');
 			if ($image_type=="image/jpeg" or $image_type=="image/jpg" or $image_type=="image/png" or $image_type=="image/PNG" or $image_type=="image/JPG" or $image_type=="image/JPEG"  ) {
 				if ($image_size>=1) {			
@@ -31,18 +36,18 @@ session_start();
 
 			}
 			else{
-				echo "<script>alert('Invalid file type')</script>";
+				echo "<script>alert('Inavlid file type')</script>";
 				exit();
 			}
 
-			$query="insert into anotice(title,image,description,category,date) values ('$title','$image_name',$description','$category''$date')";
+			$query="INSERT into anotice(title,image,description,category,date) values ('$title','$image_name','$description','$category','$date')";
 			
 			if (mysqli_query($con,$query)){
 				echo ("<script>alert('Data has been inserted.')</script>");				
-				echo ("<script>window.open('../pages/edmin/index.php?view=view','_self')</script>");
-			} else {
-                echo 'cant connect';
-            }
+				echo ("<script>window.open('../pages/admin/index.php?view=view','_self')</script>");
+			}else{
+				echo'eror';
+			}
 		}	
 	}	
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2018 at 09:38 PM
+-- Generation Time: Jul 22, 2018 at 07:43 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `sagarmatha`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anotice`
+--
+
+CREATE TABLE `anotice` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `image` varchar(500) NOT NULL,
+  `description` text NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -63,11 +78,12 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `author`, `image`, `content`, `date`) VALUES
-(12, 'MoU with Leapfrog Technology Inc. ', 'abc', '2017-09-16 06.33.59 ', 'On 7th of June,SCST signed the official MoU with Leapfrog Technology Inc. \r\nLeapfrog Technology Inc. is one of the leading IT company in Nepal.  ', '18.06.18'),
-(13, 'Sagarmathians- Winner of TechTrix Hackathon', 'xyz', '2017-09-16 06.33.59 ', 'Team Sagarmathians won Hackathon organized by Tech-Trix 2018. The hackthon was on for two days. Students from first year, Mr. Prashant Acharya, Mr. Minav Adhikari, Mr.Sailesh karki and Mr.Vipul Chaudary performed brilliantly. ', '18.06.18'),
-(14, 'This is News 1', 'aditi acharya', 'light-green-color-bo', 'This news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi Achis given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. en by Miss. Aditi AcharyaThis news iis given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi AcharyaThis news is given by Miss. Aditi Acharya', '18-07-16'),
-(15, 'ahahha', '123', '20180605_114625.jpg', 'nothing here', '18-07-16'),
-(16, 'Intake and Chlorination tank -Angel Acharya Group 1', 'mr.keshab', '14599801_11099830690', 'ahahaaaaaaaaaahhhhhhhhhhhhhhhhh', '18.07.16');
+(12, 'MoU with Leapfrog Technology Inc. ', 'abc', 'news.PNG', 'On 7th of June,SCST signed the official MoU with Leapfrog Technology Inc. \r\nLeapfrog Technology Inc. is one of the leading IT company in Nepal.  ', '18-07-22'),
+(13, 'Sagarmathians- Winner of TechTrix Hackathon', 'xyz', 'bleh.png', 'Team Sagarmathians won Hackathon organized by Tech-Trix 2018. The hackthon was on for two days. Students from first year, Mr. Prashant Acharya, Mr. Minav Adhikari, Mr.Sailesh karki and Mr.Vipul Chaudary performed brilliantly. ', '18-07-22'),
+(17, 'bleh belaha snahsahs', 'ashhasha', 'bleh.jpg', '', '18.07.21'),
+(18, 'hashhashah', 'ahuiasi', 'bleh.jpg', 'meow meow meow meow meow meow v meow meow meow meow meow meow vmeow meow meow', '18.07.21'),
+(20, 'bhahahahahahhahahaha', 'bhahahahahahhahahaha', 'new.jpg', 'bhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahahabhahahahahahhahahaha', '18.07.21'),
+(22, 'Amnesty International Nepal', 'dj', 'news.PNG', 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', '18-07-22');
 
 -- --------------------------------------------------------
 
@@ -94,37 +110,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notes`
---
-
-CREATE TABLE `notes` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `batch_id` varchar(255) NOT NULL,
-  `file` text NOT NULL,
-  `teacher_name` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `notices`
---
-
-CREATE TABLE `notices` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` text NOT NULL,
-  `batch_id` int(10) UNSIGNED NOT NULL,
-  `file` varchar(500) NOT NULL,
-  `description` text NOT NULL,
-  `teacher_name` text NOT NULL,
-  `date` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `posts`
 --
 
@@ -144,12 +129,6 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`aid`, `name`, `batch_id`, `file`, `category`, `teacher_name`, `date`, `due_date`) VALUES
-(8, 'computer', 1, 'storage/Computer.docx', '2018-07-20', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
-(9, 'english', 1, 'storage/english.docx', '2018-07-26', 'Razil shakya', '0000-00-00', '0000-00-00'),
-(10, 'new', 1, 'storage/New.docx', '2018-07-11', 'Razil shakya', '0000-00-00', '0000-00-00'),
-(11, 'computer', 2, 'storage/Computer.docx', '2018-07-16', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
-(12, 'C prog', 1, 'storage/C prog.docx', '2018-07-20', 'ganga subba', '0000-00-00', '0000-00-00'),
-(15, 'Tutorial 1', 2, 'storage/Unit 1.doc', '2018-07-20', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
 (23, 'This is notice 1', 2, 'storage/light-green-color-boxes_14921-770x430.jpg', 'notice', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
 (24, 'assignment is assignment ', 1, 'storage/Ecom.zip', 'assignment', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
 (25, 'This is notice 1', 3, 'storage/index2.html', 'assignment', 'Sushant Nyachhyon', '0000-00-00', '0000-00-00'),
@@ -191,9 +170,9 @@ CREATE TABLE `submission` (
 --
 
 INSERT INTO `submission` (`sub_id`, `aid`, `student_id`, `teacher_id`, `aname`, `file`, `feedback`, `submitted_date`) VALUES
-(8, 8, 6, 1, 'Computer', 'storage/Computer.docx', '', '2018-07-16'),
+(8, 8, 6, 1, 'Computer', 'storage/Computer.docx', 'do properly', '2018-07-16'),
 (9, 9, 6, 4, 'english', 'storage/english.docx', 'well done in english', '2018-07-16'),
-(10, 8, 2, 1, 'Computer', 'storage/Computer.docx', 'Good', '2018-07-16'),
+(10, 8, 2, 1, 'Computer', 'storage/Computer.docx', 'b[ajasns', '2018-07-16'),
 (11, 9, 2, 4, 'English', 'storage/english.docx', 'Excellent', '2018-07-16'),
 (12, 11, 5, 1, 'Computer', 'storage/Computer.docx', 'Bad', '2018-07-16'),
 (14, 10, 6, 4, 'New', 'storage/New.docx', 'very bad', '2018-07-16'),
@@ -224,19 +203,29 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `batch_id`) VALUES
 (1, 'Sushant Nyachhyon', 'sushant@gmail.com', 'sushant123', 'teacher', 0),
 (2, 'saroj khadka', 'skhadka200ns@gmail.com', 'saroj123', 'student', 1),
-(3, 'Hayes Imelda', 's@gmail.com', '12345678', 'teacher', 0),
+(3, 'Hayes Imelda', 's@gmail.com', '12345', 'teacher', 0),
 (4, 'Razil shakya', 'razil@gmail.com', 'razil', 'teacher', 0),
 (5, 'prashamsa pandey', 'pandey@gmail.com', 'pandey12345', 'student', 2),
 (6, 'ram', 'ram@gmail.com', 'ram12345', 'student', 1),
-(7, 'Hari KC', 'hari@gmail.com', '12345678', 'admin', 0),
+(7, 'Hari KC', 'hari@gmail.com', 'hello', 'admin', 0),
 (8, 'prabesh pandey', 'prabesh@gmail.com', 'prabesh12345', 'student', 1),
 (9, 'ganga subba', 'ganga@gmail.com', 'ganga123', 'teacher', 0),
 (10, 'Sita KC', 'sita@gmail.com', '12345678', 'student', 4),
-(11, 'kriti pandey', 'kriti@gmail.com', '12345678', 'student', 3);
+(11, 'kriti pandey', 'kriti@gmail.com', '12345678', 'student', 3),
+(12, 'aditical', 'pariacharya33@gmail.com', 'hello', 'admin', 0),
+(13, 'ayushma', 'ayu@ayushma.com', 'ayushma', 'student', 1),
+(14, 'adity shresath', 'adity@shrestha.com', '12345', 'teacher', 0),
+(15, 'Aarash Shrestha', 'aarash.shrestha@sagarmatha.edu.np', '12345', 'student', 1);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `anotice`
+--
+ALTER TABLE `anotice`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `batch`
@@ -254,18 +243,6 @@ ALTER TABLE `events`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `notes`
---
-ALTER TABLE `notes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `notices`
---
-ALTER TABLE `notices`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -293,6 +270,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `anotice`
+--
+ALTER TABLE `anotice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `batch`
 --
 ALTER TABLE `batch`
@@ -302,7 +285,7 @@ ALTER TABLE `batch`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -311,22 +294,10 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `notes`
---
-ALTER TABLE `notes`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
--- AUTO_INCREMENT for table `notices`
---
-ALTER TABLE `notices`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `aid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `aid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `submission`
@@ -338,7 +309,7 @@ ALTER TABLE `submission`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables

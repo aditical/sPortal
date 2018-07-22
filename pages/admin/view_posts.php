@@ -32,31 +32,40 @@ require_once '../../connections/db.php';
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Classes</h3>
+                                   Posts</h3>
                             </div>                           
                             <div class="module-body">
                             <?php                   
-                                $query = "SELECT * FROM batch ";
+                                $query ="SELECT * FROM posts ORDER BY 1 DESC";
                                 $result = mysqli_query($con,$query);
                                 while ($row = mysqli_fetch_array($result)) {
-                                $id = $row['id']; 
-                                $batch = $row['batch']; 
-                                $sql = "SELECT * FROM users WHERE type='student' AND batch_id='$id'";
-                                $run = mysqli_query($con, $sql);
-                                $total_students = mysqli_num_rows($run);                     
+                                    $id = $row['aid'];
+                                    $title = $row['name'];
+                                    $batch = $row['batch_id'];
+									$file = $row['file'];									
+                                    $author = $row['teacher_name'];
+                                    $category= $row['category'];
+									$date = $row['date'];                     
                              ?>                             
                                 <div class="row-fluid">
-                                    <div class="span6">
+                                    <div class="span12">
                                         <div class="media user">
                                            
                                             <div class="media-body">
-                                                <h3 class="media-title"> <strong>BATCH </strong>
-                                                <?php echo $batch; ?></h3>
+                                                <h2 class="media-title"> <strong><?php echo $title; ?> </strong>
+                                                </h2>  
+                                                <small><?php echo $category; ?></small>  
+                                                <a href="delete_notice.php?deln=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
                                                 <p>
-                                                    <small class="muted"><?php echo $total_students;?> students</small></p>
-                                                <div class="media-option btn-group shaded-icon">
-                                                   
+                                                <div class="pull-left">                                                    
+                                                                             
                                                 </div>
+                                                    <a href="../../<?php echo $file; ?>">Download</a>
+                                                    <em class="pull-right text-xs">on <span class="text-default"><strong><?php echo $date; ?></strong></span></em> 
+                                                    <em class="pull-right text-xs">Posted by <span class="text-default"><strong><?php echo $author;?></strong></span></em>
+                                                   
+                                                                                       
+                                                    
                                             </div>
                                         </div>
                                     </div>                                 
@@ -65,8 +74,7 @@ require_once '../../connections/db.php';
                                 <br />
                                 <?php 
 								}
-							?>  
-                                
+							?>                      
                                 
                                
                               

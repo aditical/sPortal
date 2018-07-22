@@ -9,11 +9,10 @@
                             <!--/.widget-nav-->                
                             
                             <ul class="widget widget-menu unstyled">
-                                <li><a href="#"><i class="menu-icon icon-bullhorn"></i>News</a></li>
-                                <li><a href="#"><i class="menu-icon icon-paste"></i>Notices</a></li>
-                                <li><a href="users.php"><i class="menu-icon icon-user"></i>Users </a></li>
-                                <li><a href="#"><i class="menu-icon icon-book"></i>Notes </a></li>
-                                <li><a href="#"><i class="menu-icon icon-pencil"></i>Assignments </a></li>
+                                <li><a href="view_news.php"><i class="menu-icon icon-bullhorn"></i>News</a></li>
+                                <li><a href="batch.php"><i class="menu-icon icon-save"></i>Class</a></li>    
+                                <li><a href="view_posts.php"><i class="menu-icon icon-paste"></i>Posts</a></li>
+                                <li><a href="users.php"><i class="menu-icon icon-user"></i>Users </a></li>                               
                             </ul>
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">   
@@ -26,8 +25,7 @@
                                         <li><a href="user.php"><i class="icon-user"></i>User </a></li>
 
                                     </ul>
-                                </li>  
-                            <li><a href="batch.php"><i class="menu-icon icon-save"></i>Class</a></li>                           
+                                </li>                                                     
                                 <li><a href="reset.php"><i class="menu-icon icon-signout"></i>Reset Password </a></li>
                             </ul>
                         </div>
