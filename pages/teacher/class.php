@@ -24,16 +24,12 @@ require_once '../../connections/db.php';
         <?php include 'includes/aside.php' ?>
                 <!-- /.aside -->
         <section id="content">
-          <section class="vbox">          
-            <section class="scrollable padder">
-              <div class="m-b-md"></div>
-              <div class="row">
-                <div class="col-md-12">
-                  <h4 class="m-t-none">Classes</h4>
-                  <div class="m-b-md"></div>
-              <section class="panel panel-default">
-                <div class="row m-l-none m-r-none bg-light lter">
-                    <?php                   
+          <section class="vbox">            
+             <div class="m-b-md"></div>                    
+              <div class="m-b-md"></div>                   
+                  <div class="col-md-5">
+                  <h4 class="m-t-none text-primary "><strong>Classes</strong></h4>
+                   <?php                   
                       $query = "SELECT * FROM batch ";
                        $result = mysqli_query($con,$query);
                       while ($row = mysqli_fetch_array($result)) {
@@ -43,24 +39,22 @@ require_once '../../connections/db.php';
                       $run = mysqli_query($con, $sql);
                       $total_students = mysqli_num_rows($run);                     
                       ?>
-                      <div class="col-sm-6 col-md-3 padder-v b-r b-light">
-                      <span class="fa-stack fa-2x pull-left m-r-sm">
+                     <div class="row m-l-none m-r-none padder-v bg-light lter">
+                      <span class="fa-stack fa-3x pull-left m-r-sm">
                         <i class="fa fa-circle fa-stack-2x text-info"></i>
                         <i class="fa fa-users fa-stack-1x text-white"></i>
                       </span>
                       <a class="clear" href="view_batch.php?batch=<?php echo $batch;?>">
-                        <span class="h3 block m-t-xs"><strong><?php echo $batch; ?></strong></span>
-                        <small class="text-muted text-uc"><?php echo $total_students; ?></small>
-                      </a>
-                    </div>    
+                        <span class="h3 block m-t-xs"><strong>BATCH <?php echo $batch; ?></strong></span>
+                        <small class="text-muted text-uc"><?php echo $total_students; ?> Students</small>
+                      </a>       
+                    </div>
+                     <div class="m-b-md"></div> 
                     <?php 
-								}
-							?>               
-               
-                </div>
-              </section>     
-                </div>         
-              </div>
+                      }
+                    ?>               
+                </div> 
+                </section>         
       </section>
     </section>
   </section>

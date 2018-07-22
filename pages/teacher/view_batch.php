@@ -28,7 +28,11 @@ $bid = $id;
 </head>
 <body>
   <section class="vbox">
-      <?php include 'includes/header.php'?>      
+      <?php include 'includes/header.php'?>   
+      <?php
+      $loggedUser_name= $_SESSION['loggedUser_name'];
+      $loggeduser = $_SESSION['loggedUser'];
+      ?>   
         <section>
       <section class="hbox stretch">
         <!-- .aside -->
@@ -37,8 +41,8 @@ $bid = $id;
         <section id="content">
         <section class="vbox">
       
-            <header class="header bg-white b-b b-light">
-              <p><big> <?php echo $batch; ?></big></p>
+            <header class="header bg-default b-b b-light">
+              <p><big><strong> BATCH <?php echo $batch; ?></strong></big></p>
             </header>
         
           <section class="hbox stretch">
@@ -48,33 +52,94 @@ $bid = $id;
             <aside class="bg-white">
                   <section class="vbox">                    
                     <section class="scrollable">
+                       <div class="col-md-12">
+                    <div class="m-b-md"></div>
+                    <h4 class="text-center text-primary m-t-none"><strong>Classroom Essentials</strong></h4>
+                    <div class="m-b-md"></div>
                     <section class="panel panel-default">
-                       <?php                    
-                        
-                          $sql = "SELECT * FROM posts WHERE batch_id='$id'";
-                          $run = mysqli_query($con, $sql);
-                          while ($row = mysqli_fetch_array($run)){
-                            $id = $row['aid']; 
-                            $name = $row['name'];
-                            $file = $row['file'];
-                            $category = $row['category'];                         
-                      
-                       ?>
-                          <header class="panel-heading bg-danger lt no-border">
-                          <div class="clearfix">
-                            
-                            <div class="clear">
-                              <div class="h3 m-t-xs m-b-xs text-white">
-                              <?php echo $category; ?> 
-                           
-                             <a href="#"> <i class="fa fa-trash-o text-white pull-right text-xs m-t-sm"style="font-size:24px"></i> </a> 
-                             <a href="#"> <i class="fa fa-edit text-white pull-right text-xs m-t-sm" style="font-size:24px"></i> </a>               
-                          </div>
-                          <small> <?php echo $name; ?></small><br/>
-                          <small> <?php echo $file; ?></small>
-                        </header>
+                    <header class="panel-heading bg-light">
+                      <ul class="nav nav-tabs nav-justified">
+                        <li class="active"><a href="#assignments" data-toggle="tab">Assignments</a></li>
+                        <li><a href="#notes" data-toggle="tab">Notes</a></li>
+                        <li><a href="#notices" data-toggle="tab">Notices</a></li>
+                      </ul>
+                    </header>
+                    <section class="scrollable">
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="assignments">
+                          <?php                    
+                              $sql = "SELECT * FROM posts WHERE batch_id='$id'AND category='assignment'";
+                              $run = mysqli_query($con, $sql);
+                              while ($row = mysqli_fetch_array($run)){
+                              $id = $row['aid']; 
+                              $name = $row['name'];
+                              $file = $row['file'];
+                                               
+                          ?>
+                          <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+                            <li class="list-group-item">
+                              <a href="#" class="clear">
+                                <small class="pull-right">
+                                   <a href="#"> <i class="fa fa-trash-o text-warning pull-right text-xs m-t-sm" style="font-size:24px"></i> </a>
+                                   <a href="edit_assignments.php"> <i class="fa fa-edit text-danger pull-right text-xs m-t-sm" style="font-size:24px"></i> </a> 
+                                </small>                                
+                              </a>
+                              <big><strong> <?php echo $name; ?></strong></big><br/>
+                              <small> <?php echo $file; ?></small>
+                            </li>
                           <?php } ?>
+                          </ul>
+                        </div>
+                        <div class="tab-pane" id="notes">
+                           <?php                    
+                              $sql = "SELECT * FROM posts WHERE batch_id='$id' AND category='note'";
+                              $run = mysqli_query($con, $sql);
+                              while ($row = mysqli_fetch_array($run)){
+                              $id = $row['aid']; 
+                              $name = $row['name'];
+                              $file = $row['file'];                                                     
+                            ?>
+                           <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+                             <li class="list-group-item">
+                              <a href="#" class="clear">
+                                <small class="pull-right">
+                                   <a href="#"> <i class="fa fa-trash-o text-info pull-right text-xs m-t-sm" style="font-size:24px"></i> </a>
+                                   <a href="#"> <i class="fa fa-edit text-success pull-right text-xs m-t-sm" style="font-size:24px"></i> </a> 
+                                </small>                               
+                              </a>
+                              <small> This is something<?php echo $name; ?></small><br/>
+                              <small> <?php echo $file; ?></small>
+                            </li>
+                          <?php } ?>
+                          </ul>
+                        </div>
+                        <div class="tab-pane" id="notices">
+                           <?php                    
+                              $sql = "SELECT * FROM posts WHERE batch_id='$id' AND category='notice'";
+                              $run = mysqli_query($con, $sql);
+                              while ($row = mysqli_fetch_array($run)){
+                              $id = $row['aid']; 
+                              $name = $row['name'];
+                              $file = $row['file'];                                                     
+                          ?>
+                          <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
+                            <li class="list-group-item">
+                              <a href="#" class="clear">
+                                <small class="pull-right">
+                                   <a href="#"> <i class="fa fa-trash-o text-info pull-right text-xs m-t-sm" style="font-size:24px"></i> </a> 
+                                   <a href="#"> <i class="fa fa-edit text-success pull-right text-xs m-t-sm" style="font-size:24px"></i> </a>
+                                </small>                            
+                              </a>
+                              <small> <?php echo $name; ?></small><br/>
+                              <small> <?php echo $file; ?></small>
+                            </li>
+                          <?php } ?>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
                       </section>
+                    </div>
                     </section>
                   </section>
                 </aside>
@@ -82,9 +147,9 @@ $bid = $id;
             <!-- .aside -->
             
             <!-- /.aside -->
-            <aside class="aside-sm b-l">
+                 <aside class="aside-sm b-l">
               <section class="vbox">
-                <header class="bg-light dk header">
+                <header class="bg-info dk header">
                   <p>Students</p>
                 </header>    
                 <?php            
@@ -98,7 +163,7 @@ $bid = $id;
                 
                   <div class="list-group list-group-alt no-radius no-borders">
                 
-                  <a class="list-group-item" href="#">
+                  <a class="list-group-item">
                         <i class="fa fa-circle text-success text-xs"></i>
                         <span><?php echo $name; ?></span>
                     </a>   
@@ -110,6 +175,7 @@ $bid = $id;
               </section>
             </aside>
           </section>
+ 
           <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
         </section>
         <aside class="bg-light lter b-l aside-md hide" id="notes">

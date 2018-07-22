@@ -58,7 +58,7 @@
                         </a>
                       </li>
                       <li >
-                          <a href="#"  >
+                          <a href="assignments.php"  >
                             <i class="fa fa-pencil icon">
                               <b class="bg-primary"></b>
                             </i>

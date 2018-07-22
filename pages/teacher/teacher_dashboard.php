@@ -75,24 +75,29 @@ require_once '../../connections/db.php';
                          $id = $row['id'];
                          $title = $row['title'];
                          $image = $row['image'];
-                         $content = substr($row['content'],0,400);
+                         $content = substr($row['content'],0,100);
                          $author = $row['author'];
                          $date = $row['date'];
                         ?>
                     <article class="media">
                         <div class="pull-left">
-                            <span class="fa-stack fa-lg"></span>                           
+                            <span class="fa-stack fa-lg"></span> 
+                            <img src="../../storage/<?php echo $image;?>" width="120" height="120"/>
+                          
                         </div>
                         <div class="media-body">                        
                             <a href="#" class="h4"><?php echo $title; ?></a>
-                            <small class="block m-t-xs"><?php echo $content; ?></small>
-                            <em class="text-xs">Posted by <span class="text-danger"><?php echo $author;?></span></em>
-                            <em class="text-xs">on <span class="text-danger"><?php echo $date; ?></span></em>
+                            <small class="block m-t-xs"><?php echo $content; ?>.....<a class="text-info href="#">Read More</a> </small>
+                             <div class="m-b-md"></div>
+                             <div class="pull-right"> 
+                            <em class="text-xs">Posted by <span class="text-inverse"><strong><?php echo $author;?></strong></span></em>
+                            <em class="text-xs">on <span class="text-inverse"><strong><?php echo $date; ?></strong></span></em>
                         </div>
+                      </div>
                         </article> 
                         <div class="line pull-in"></div>
                     <?php 
-						}
+						          }
                     ?>                                   
                 </section>  
               </div>   
