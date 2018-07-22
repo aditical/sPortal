@@ -68,5 +68,4 @@ if(isset($_POST['forget'])){
 			}
 }
  
-
 ?>
