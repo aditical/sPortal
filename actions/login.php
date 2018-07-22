@@ -35,4 +35,4 @@ if (mysqli_num_rows($query) > 0) {
     } else {
        header('Location: ../index.php?msg=error');
     }
-      ?>
+     ?>
