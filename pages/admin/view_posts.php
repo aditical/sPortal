@@ -55,7 +55,7 @@ require_once '../../connections/db.php';
                                                 <h2 class="media-title"> <strong><?php echo $title; ?> </strong>
                                                 </h2>  
                                                 <small><?php echo $category; ?></small>  
-                                                <a href="delete_notice.php?deln=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
+                                                <a href="delete_posts.php?deln=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
                                                 <p>
                                                 <div class="pull-left">                                                    
                                                                              

@@ -1,12 +1,6 @@
 <?php
 require_once '../connections/db.php';
-session_start();
-//$loggedUser_name= $_SESSION['loggedUser_name'];
-//$loggeduser = $_SESSION['loggedUser'];
-if ($con->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
- }
-   echo "Connected successfully";
+   
  ?>
 
 <?php
@@ -40,13 +34,13 @@ if ($con->connect_error) {
 				exit();
 			}
 
-			$query="INSERT into anotice(title,image,description,category,date) values ('$title','$image_name','$description','$category','$date')";
+			$sql="INSERT into anotice(title,image,description,category,date) values ('$title','$image_name','$description','$category','$date')";
 			
-			if (mysqli_query($con,$query)){
+			if ($con->query($sql)=== TRUE){
 				echo ("<script>alert('Data has been inserted.')</script>");				
-				echo ("<script>window.open('../pages/admin/index.php?view=view','_self')</script>");
+				echo ("<script>window.open('../pages/admin/notice.php?view=view','_self')</script>");
 			}else{
-				echo'eror';
+				echo "Error: " . $sql . "<br>" . $con->error;
 			}
 		}	
 	}	

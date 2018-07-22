@@ -42,13 +42,14 @@ require_once '../../connections/db.php';
                                 while ($row = mysqli_fetch_array($result)) {
                                  $id = $row['id'];
                                  $name= $row['name'];
-                                 $type = $row['type'];                                   
+                                 $type = $row['type'];
+                                 $image= $row['image'];                                   
                              ?>                          
                                 <div class="row-fluid">
                                     <div class="span6">
                                         <div class="media user">
                                             <a class="media-avatar pull-left" href="#">
-                                                <img src="images/user.png">
+                                            <img src="../../storage/<?php echo $image;?>"/>
                                             </a>
                                             <div class="media-body">
                                                 <h3 class="media-title">
