@@ -1,10 +1,9 @@
 <?php
 require_once '../../connections/db.php';
-session_start();
-//$loggedUser_name= $_SESSION['loggedUser_name'];
-//$loggeduser = $_SESSION['loggedUser'];
+$query = mysqli_query($con, "SELECT * FROM batch");
 ?>
-<?php include '../../actions/server.php'; ?>  
+  
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +17,6 @@ session_start();
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-	<script> CKEDITOR.replace( 'editor1' ); </script>
 </head>
 <body>
 
@@ -32,9 +30,6 @@ session_start();
 			</div>
 		</div><!-- /navbar-inner -->
 	</div><!-- /navbar -->
-
-
-
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
@@ -43,10 +38,10 @@ session_start();
 					<div class="content">
 						<div class="module">
 							<div class="module-head">
-								<h3>Notice</h3>
+								<h3>Add User</h3>
 							</div>
 							<div class="module-body">							
-									<form class="form-horizontal row-fluid" action=user.php method="POST" enctype="multipart/form-data">
+									<form class="form-horizontal row-fluid"name="add_user"  action=server.php method="POST" enctype="multipart/form-data">
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Name </label>
 											<div class="controls">
@@ -56,7 +51,7 @@ session_start();
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Email</label>
 											<div class="controls">
-												<input type="email" id="basicinput" placeholder="someone@something.com" class="span8"name="email " id="email">												
+												<input type="email" id="basicinput" placeholder="someone@something.com" class="span8" name="email">												
 											</div>
                                         </div>
                                         <div class="control-group">
@@ -81,13 +76,7 @@ session_start();
 											<div class="controls">
 												<input type="file"  id="basicinput"  name="image" class="span8">												
 											</div>
-										</div>
-										<div class="control-group">
-											<label class="control-label" for="basicinput" >Description</label>
-											<div class="controls">
-												<textarea class="span8" rows="5"name="description"></textarea>
-											</div>
-                                        </div>
+										</div>									
                                         <div class="control-group"id="showBatch">
 											<label class="control-label" for="basicinput">Select batch</label>
 											<div class="controls">

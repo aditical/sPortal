@@ -39,7 +39,7 @@ session_start();
 			
 			if (mysqli_query($con,$query)){
 				echo ("<script>alert('Data has been inserted.')</script>");				
-				echo ("<script>window.open('../pages/edmin/index.php?view=view','_self')</script>");
+				echo ("<script>window.open('../pages/admin/index.php?view=view','_self')</script>");
 			}
 		}	
 	}	

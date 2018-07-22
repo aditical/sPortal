@@ -28,7 +28,7 @@
                                     </ul>
                                 </li>  
                             <li><a href="batch.php"><i class="menu-icon icon-save"></i>Class</a></li>                           
-                                <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                <li><a href="reset.php"><i class="menu-icon icon-signout"></i>Reset Password </a></li>
                             </ul>
                         </div>
                         <!--/.sidebar-->
