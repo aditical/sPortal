@@ -1,6 +1,6 @@
 <?php
 //start the session
-session_start();
+@session_start();
 // require database
 require_once '../connections/db.php';
 
@@ -29,8 +29,8 @@ if (mysqli_num_rows($query) > 0) {
         header('Location: ../pages/student_dashboard.php');
     }
 } else {
-    echo "Invalide Username or Password<br>";
-    echo "Redirecting Back in 5 sec";
-    header('refresh:5; url:../index.php');
+   // echo "Invalide Username or Password<br>";
+    //echo "Redirecting Back in 5 sec";
+    //header('refresh:5; url:../index.php');
 }
  ?>
