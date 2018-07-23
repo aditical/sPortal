@@ -3,6 +3,10 @@ require_once './../../connections/db.php';
 session_start();
 $loggedUser_name= $_SESSION['loggedUser_name'];
 $loggeduser = $_SESSION['loggedUser'];
+$query = "SELECT * FROM users WHERE name='$loggedUser_name' ";
+$result = mysqli_query($con,$query);
+$row = mysqli_fetch_array($result);
+$image = $row['image'];
  ?>
 <header class="bg-dark dk header navbar navbar-fixed-top-xs">
       <div class="navbar-header aside-md">      
@@ -49,7 +53,7 @@ $loggeduser = $_SESSION['loggedUser'];
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span class="thumb-sm avatar pull-left">
-              <img src="images/avatar.jpg">
+            <img src="./../../storage/<?php echo $image;?>" width="100" height="100"/>  
             </span>
             <?php echo $loggedUser_name; ?><b class="caret"></b>
           </a>

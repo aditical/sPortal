@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2018 at 07:43 PM
+-- Generation Time: Jul 23, 2018 at 07:34 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.10
 
@@ -34,8 +34,18 @@ CREATE TABLE `anotice` (
   `image` varchar(500) NOT NULL,
   `description` text NOT NULL,
   `category` varchar(255) NOT NULL,
+  `batch_id` varchar(255) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `anotice`
+--
+
+INSERT INTO `anotice` (`id`, `title`, `image`, `description`, `category`, `batch_id`, `date`) VALUES
+(1, 'bhejaj', 'anotice.PNG', 'notice notice notice', 'teacher', '', '2018-07-22'),
+(2, 'leashasha', 'news.PNG', 'bahhahsah', 'student', '', '2018-07-22'),
+(4, 'Training and replacement has organized something. ', 'error.PNG', 'training and replacement unit has origanixed something and you should be atherea ast ashansy cost bleh', 'student', '', '2018-07-23');
 
 -- --------------------------------------------------------
 
@@ -145,8 +155,7 @@ INSERT INTO `posts` (`aid`, `name`, `batch_id`, `file`, `category`, `teacher_nam
 (38, 'this is insaneeeeeeeeeeeeee', 3, 'storage/Ecom.zip', 'assignment', 'Hayes Imelda', '0000-00-00', '2018-07-12'),
 (39, 'i am so stupid', 2, 'storage/light-green-color-boxes_14921-770x430.jpg', 'note', 'Hayes Imelda', '0000-00-00', '0000-00-00'),
 (40, 'now it might', 2, 'storage/light-green-color-boxes_14921-770x430.jpg', 'notice', 'Hayes Imelda', '0000-00-00', '0000-00-00'),
-(41, 'last time', 2, 'storage/light-green-color-boxes_14921-770x430.jpg', 'note', 'Hayes Imelda', '0000-00-00', '0000-00-00'),
-(42, 'i swear i am sleeping', 2, 'storage/Ecom.zip', 'note', 'Hayes Imelda', '0000-00-00', '0000-00-00');
+(41, 'last time', 2, 'storage/light-green-color-boxes_14921-770x430.jpg', 'note', 'Hayes Imelda', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -193,29 +202,34 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch_id` int(11) DEFAULT NULL
+  `batch_id` int(11) DEFAULT NULL,
+  `image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `batch_id`) VALUES
-(1, 'Sushant Nyachhyon', 'sushant@gmail.com', 'sushant123', 'teacher', 0),
-(2, 'saroj khadka', 'skhadka200ns@gmail.com', 'saroj123', 'student', 1),
-(3, 'Hayes Imelda', 's@gmail.com', '12345', 'teacher', 0),
-(4, 'Razil shakya', 'razil@gmail.com', 'razil', 'teacher', 0),
-(5, 'prashamsa pandey', 'pandey@gmail.com', 'pandey12345', 'student', 2),
-(6, 'ram', 'ram@gmail.com', 'ram12345', 'student', 1),
-(7, 'Hari KC', 'hari@gmail.com', 'hello', 'admin', 0),
-(8, 'prabesh pandey', 'prabesh@gmail.com', 'prabesh12345', 'student', 1),
-(9, 'ganga subba', 'ganga@gmail.com', 'ganga123', 'teacher', 0),
-(10, 'Sita KC', 'sita@gmail.com', '12345678', 'student', 4),
-(11, 'kriti pandey', 'kriti@gmail.com', '12345678', 'student', 3),
-(12, 'aditical', 'pariacharya33@gmail.com', 'hello', 'admin', 0),
-(13, 'ayushma', 'ayu@ayushma.com', 'ayushma', 'student', 1),
-(14, 'adity shresath', 'adity@shrestha.com', '12345', 'teacher', 0),
-(15, 'Aarash Shrestha', 'aarash.shrestha@sagarmatha.edu.np', '12345', 'student', 1);
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `batch_id`, `image`) VALUES
+(1, 'Sushant Nyachhyon', 'sushant@gmail.com', 'sushant123', 'teacher', 0, ''),
+(2, 'saroj khadka', 'skhadka200ns@gmail.com', 'saroj123', 'student', 1, ''),
+(3, 'Hayes Imelda', 's@gmail.com', '12345', 'teacher', 0, ''),
+(4, 'Razil shakya', 'razil@gmail.com', 'razil', 'teacher', 0, ''),
+(5, 'prashamsa pandey', 'pandey@gmail.com', 'pandey12345', 'student', 2, ''),
+(6, 'ram', 'ram@gmail.com', 'ram12345', 'student', 1, ''),
+(7, 'Hari KC', 'hari@gmail.com', 'hello', 'admin', 0, ''),
+(8, 'prabesh pandey', 'prabesh@gmail.com', 'prabesh12345', 'student', 1, ''),
+(9, 'ganga subba', 'ganga@gmail.com', 'ganga123', 'teacher', 0, ''),
+(10, 'Sita KC', 'sita@gmail.com', '12345678', 'student', 4, ''),
+(11, 'kriti pandey', 'kriti@gmail.com', '12345678', 'student', 3, ''),
+(12, 'aditical', 'pariacharya33@gmail.com', 'hello', 'admin', 0, ''),
+(13, 'ayushma', 'ayu@ayushma.com', 'ayushma', 'student', 1, ''),
+(14, 'adity shresath', 'adity@shrestha.com', '12345', 'teacher', 0, ''),
+(15, 'Aarash Shrestha', 'aarash.shrestha@sagarmatha.edu.np', '12345', 'student', 1, ''),
+(16, 'Amogh', 'amogh@amogh.com', '12345', 'teacher', 0, 'anotice.PNG'),
+(17, 'amrit', 'amrit@amrit.com', '12345', 'teacher', 0, 'aarash071.PNG'),
+(18, 'deepak', 'deepak@deepak.com', '12345', 'admin', 0, 'deepak.PNG'),
+(19, 'Dileshwori', 'dilu@dilu.com', '12345', 'teacher', 0, 'Capture.PNG');
 
 --
 -- Indexes for dumped tables
@@ -273,7 +287,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `anotice`
 --
 ALTER TABLE `anotice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `batch`
@@ -285,7 +299,7 @@ ALTER TABLE `batch`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -297,7 +311,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `aid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `aid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `submission`
@@ -309,7 +323,7 @@ ALTER TABLE `submission`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

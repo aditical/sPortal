@@ -22,7 +22,7 @@
         <header class="panel-heading text-center">
           <strong>Change Password</strong>
         </header>
-        <form class="form-signin" method="POST" name="forgetpwd">
+        <form class="form-signin" method="POST" name="forgetpassword">
           <div class="form-group">
            
             <input type="Email" name="email" placeholder="Email" class="form-control input-lg" required>
@@ -58,7 +58,7 @@ if(isset($_POST['forget'])){
 			$subject="Forget password";
 			include_once('function/gmail.php');
 			date_default_timezone_set('Etc/UTC');
-			require_once ('classes/PHPMailer-master/PHPMailerAutoload.php');
+			require_once ('PHPMailer-master/PHPMailerAutoload.php');
 			//Create a new PHPMailer instance
 			$mail = new PHPMailer;	
 			send_mail($email_tosend,$subject,$password,$mail);
@@ -68,5 +68,4 @@ if(isset($_POST['forget'])){
 			}
 }
  
-
 ?>

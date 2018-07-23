@@ -37,15 +37,15 @@ require_once '../../connections/db.php';
                             </div>                           
                             <div class="module-body">
                             <?php                   
-                                $query ="SELECT * FROM posts ORDER BY 1 DESC";
+                                $query ="SELECT * FROM anotice ORDER BY 1 DESC";
                                 $result = mysqli_query($con,$query);
                                 while ($row = mysqli_fetch_array($result)) {
-                                    $id = $row['aid'];
-                                    $title = $row['name'];
-                                    $batch = $row['batch_id'];
-									$file = $row['file'];									
-                                    $author = $row['teacher_name'];
-                                    $category= $row['category'];
+                                    $id = $row['id'];
+									$title = $row['title'];
+									$file = $row['image'];									
+                                    $description = $row['description'];
+                                    $type= $row['category'];
+                                    $batch= $row['batch_id'];
 									$date = $row['date'];                     
                              ?>                             
                                 <div class="row-fluid">
@@ -54,17 +54,15 @@ require_once '../../connections/db.php';
                                            
                                             <div class="media-body">
                                                 <h2 class="media-title"> <strong><?php echo $title; ?> </strong>
-                                                </h2>  
-                                                <small><?php echo $category; ?></small>  
-                                                <a href="delete_notice.php?deln=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
+                                                </h2>    
+                                                <a href="delete_notices.php?del=<?php echo $id;?>" class="  pull-right text-xs m-t-sm"><i class="icon-trash"></i></a>                                                    
+                                                    <a href="edit_notices.php?edit=<?php echo $id;?>" class="   pull-right text-xs m-t-sm"><i class="icon-edit"></i></a>                                            
                                                 <p>
                                                 <div class="pull-left">                                                    
-                                                                             
+                                                    <img src="../../storage/<?php echo $file;?>" width="120" height="120"/>                          
                                                 </div>
-                                                    <a href="../../<?php echo $file; ?>">Download</a>
-                                                    <em class="pull-right text-xs">on <span class="text-default"><strong><?php echo $date; ?></strong></span></em> 
-                                                    <em class="pull-right text-xs">Posted by <span class="text-default"><strong><?php echo $author;?></strong></span></em>
-                                                   
+                                                    <small class="muted"><?php echo $description;?> .....<a class="text-info" href="#">Read More</a></small></p>
+                                                    <em class="pull-right text-xs"> Posted on <span class="text-default"><strong><?php echo $date; ?></strong></span> for <span class="text-default"><strong><?php echo $type; ?></strong></em> 
                                                                                        
                                                     
                                             </div>

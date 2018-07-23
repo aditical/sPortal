@@ -1,3 +1,7 @@
+<?php
+require_once '../../connections/db.php';
+$query = mysqli_query($con, "SELECT * FROM batch");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +54,7 @@
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Select category</label>
 											<div class="controls">
-												<select tabindex="1" data-placeholder="Select here.." class="span8" name="category">
+												<select tabindex="1" data-placeholder="Select here.." class="span8" name="type" id="cmbSelectType">
 													<option value="">Select here..</option>
 													<option value="teacher">Teacher</option>
 													<option value="student">Student</option>												
@@ -68,6 +72,17 @@
 											<label class="control-label" for="basicinput" >Description</label>
 											<div class="controls">
 												<textarea class="span8" rows="5"name="description"></textarea>
+											</div>
+										</div>
+										<div class="control-group"id="showBatch">
+											<label class="control-label" for="basicinput">Select batch</label>
+											<div class="controls">
+												<select tabindex="1" class="span8" name="cmbBatch">
+                                                    <?php
+                                                    while($row = mysqli_fetch_assoc($query)) { ?>
+                                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['batch']; ?></option>
+                                                    <?php } ?>												
+												</select>
 											</div>
 										</div>
 										<div class="control-group">
@@ -92,4 +107,14 @@
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$('#cmbSelectType').change(function() {
+			var type = $(this).val();
+			if (type == 'student') {
+				$('#showBatch').fadeIn('slow');
+			} else {
+				$('#showBatch').hide();
+			}
+		});
+	</script>
 </body>

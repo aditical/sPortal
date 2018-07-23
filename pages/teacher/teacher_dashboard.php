@@ -49,8 +49,7 @@ require_once '../../connections/db.php';
                     </div>    
                     <?php 
 								}
-							?>         
-               
+							?>                     
                   
                  
                 </div>
@@ -61,7 +60,7 @@ require_once '../../connections/db.php';
                    <header class="panel-heading">
                      <ul class="nav nav-pills pull-right">
                        <li>
-                         <a href="#" class="panel-toggle text-muted"><i class="fa fa-caret-down text-active"></i><i class="fa fa-caret-up text"></i></a>
+                         <a href="#" class="panel-toggle text-muted"><i class="fa fa-caret-down text-active"></i></a>
                         </li>
                       </ul>
                       News <span class="badge bg-info"></span>                    
@@ -75,30 +74,55 @@ require_once '../../connections/db.php';
                          $id = $row['id'];
                          $title = $row['title'];
                          $image = $row['image'];
-                         $content = substr($row['content'],0,100);
+                         $fullcontent = $row['content'];
+                         $content = substr( $row['content'], 0, 300 );
                          $author = $row['author'];
                          $date = $row['date'];
                         ?>
                     <article class="media">
                         <div class="pull-left">
                             <span class="fa-stack fa-lg"></span> 
-                            <img src="../../storage/<?php echo $image;?>" width="120" height="120"/>
-                          
+                            <img src="../../storage/<?php echo $image;?>" width="120" height="120"/>                          
                         </div>
                         <div class="media-body">                        
-                            <a href="#" class="h4"><?php echo $title; ?></a>
-                            <small class="block m-t-xs"><?php echo $content; ?>.....<a class="text-info href="#">Read More</a> </small>
-                             <div class="m-b-md"></div>
-                             <div class="pull-right"> 
-                            <em class="text-xs">Posted by <span class="text-inverse"><strong><?php echo $author;?></strong></span></em>
-                            <em class="text-xs">on <span class="text-inverse"><strong><?php echo $date; ?></strong></span></em>
-                        </div>
-                      </div>
+                        <div class="media-body">
+                           <a href="#" class="h4 text-inverse"  data-toggle="modal" data-target="#popup<?php echo $i; ?>"><?php echo $title; ?></a>
+                            <p><?php echo $content; ?>......<a class="text-info" href="#" data-toggle="modal" data-target="#popup<?php echo $i; ?>">Read More</a></p>
+                             <div class="publish-block">
+                                <em class="text-xs">Posted by 
+                                  <span class="text-danger"><strong><?php echo $author; ?></strong></span></em>
+                                  <em class="text-xs">on
+                                  <span class="text-danger"><strong><?php echo $date; ?></strong></span></em>
+                               </div>
+                          </div>
+                      
                         </article> 
-                        <div class="line pull-in"></div>
-                    <?php 
-						          }
-                    ?>                                   
+                        <div class="modal fade" id="popup<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title text-inverse" id="exampleModalLabel"><strong><?php echo $title; ?></strong></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <?php echo $fullcontent; ?>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <div class="publish-block">
+                                    <em class="text-xs">Posted by <span
+                                    class="text-danger"><strong><?php echo $author; ?></strong></span></em>
+                                  <em class="text-xs">on <span
+                                  class="text-danger"><strong><?php echo $date; ?></strong></span></em>
+                                  </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <?php
+                          $i++; }
+                          ?>                                  
                 </section>  
               </div>   
               <div class="col-md-4">
@@ -111,24 +135,34 @@ require_once '../../connections/db.php';
                           <li data-target="#c-slide" data-slide-to="2" class=""></li>
                         </ol>
                         <div class="carousel-inner">
+                        <?php                   
+                          $query = "SELECT * FROM anotice WHERE category='teacher' ";
+                          $result = mysqli_query($con,$query);
+                          while ($row = mysqli_fetch_array($result)) {
+                          $id = $row['id']; 
+                          $title = $row['title']; 
+                          $description = $row['description'];   }                                          
+                      ?>
                           <div class="item active">
                             <p class="text-center">
-                              <a href="#"><em class="h4 text-mute">This is notice for teacher by admin</em></a><br>
-                              <small class="text-muted">Prepare questions for 1st exam</small>
+                              <a href="#"><em class="h4 text-mute"><?php echo $title; ?></em></a><br>
+                              <small class="text-muted"><?php echo $description; ?></small>
                             </p>
                           </div>
+                         
                           <div class="item">
                             <p class="text-center">
-                              <em class="h4 text-mute">Notice2</em><br>
+                              <em class="h4 text-mute"><?php echo $title; ?></em><br>
                               <small class="text-muted">Tomorrow you should take class earlier</small>
                             </p>
                           </div>
                           <div class="item">
                             <p class="text-center">
-                              <em class="h4 text-mute">Notice 3</em><br>
+                              <em class="h4 text-mute"><?php echo $title; ?></em><br>
                               <small class="text-muted">Department meeting tommorow</small>
                             </p>
                           </div>
+                          
                         </div>
                         <a class="left carousel-control" href="#c-slide" data-slide="prev">
                           <i class="fa fa-angle-left"></i>

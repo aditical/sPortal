@@ -101,6 +101,20 @@ require_once '../../connections/db.php';
                         <div class="module-head">
 								<h3>Notices</h3>
 							</div>
+                            <?php 				
+                                   
+                                    $query = "SELECT * FROM anotice ORDER BY 1 DESC LIMIT 3";
+                                    $result = mysqli_query($con,$query);
+
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $id = $row['id'];
+                                        $title = $row['title'];
+                                        $image = $row['image'];
+                                        $content = $row['description'];
+                                        $type = $row['category'];
+                                        $date = $row['date'];
+
+                        ?>
                             <div class="module-body">
                                 <div class="profile-head media">
                                     <a href="#" class="media-avatar pull-left">
@@ -108,16 +122,19 @@ require_once '../../connections/db.php';
                                     </a>
                                     <div class="media-body">
                                         <h4>
-                                            John Donga <small>Offline</small>
+                                        <?php echo $title; ?>
                                         </h4>
                                         <p class="profile-brief">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                            unknown printer took a galley of type.
+                                       <small> <?php echo $content; ?></small>
+                                       <em class="pull-right text-xs"> Posted on <span class="text-default"><strong><?php echo $date; ?></strong></span> for <span class="text-default"><strong><?php echo $type; ?></strong></em> 
+
                                         </p>                                       
                                     </div>
                                 </div>
                             </div>
+                                    <?php 
+                                }
+                                ?>
                         </div>
                     </div>
                         <div class="content">                        

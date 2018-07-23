@@ -1,7 +1,6 @@
 <?php
-require_once '../connections/db.php';
-   
- ?>
+require_once '../connections/db.php';   
+?>
 
 <?php
 	if(isset($_POST['submit'])){
@@ -11,7 +10,8 @@ require_once '../connections/db.php';
 		}
 		else{
 			$title=$_POST['title'];
-			$category= $_POST['category'];					
+			$type= $_POST['type'];	
+			$batch= $_POST["cmbBatch"]; 				
 			$image_name=$_FILES['image']['name'];
 			$image_type=$_FILES['image']['type'];
 			$image_size=$_FILES['image']['size'];
@@ -33,8 +33,10 @@ require_once '../connections/db.php';
 				echo "<script>alert('Inavlid file type')</script>";
 				exit();
 			}
-
-			$sql="INSERT into anotice(title,image,description,category,date) values ('$title','$image_name','$description','$category','$date')";
+			if ($type == 'teacher') {
+				$batch = 0;
+			}
+			$sql="INSERT into anotice(title,image,description,category,batch_id,date) values ('$title','$image_name','$description','$type','$batch','$date')";
 			
 			if ($con->query($sql)=== TRUE){
 				echo ("<script>alert('Data has been inserted.')</script>");				

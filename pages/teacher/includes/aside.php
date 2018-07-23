@@ -14,7 +14,14 @@
                         <span>Dashboard</span>
                       </a>
                     </li>
-                  
+                    <li >
+                      <a href= "profile.php"  >
+                        <i class="fa fa-user icon">
+                          <b class="bg-warning"></b>
+                        </i>                       
+                        <span>Profile</span>                       
+                      </a>                    
+                    </li>
                     <li >
                       <a href= "news.php"  >
                         <i class="fa fa-list-alt icon">
@@ -23,6 +30,7 @@
                         <span>News</span>                       
                       </a>                    
                     </li>
+                    
                     <li >
                       <a href="uploads.php"  >
                         <i class="fa fa-pencil-square icon">
@@ -34,25 +42,32 @@
                     <li >
                       <a href="class.php"  >
                         <i class="fa fa-book icon">
-                          <b class="bg-warning"></b>
+                          <b class="bg-danger"></b>
                         </i>                      
                         <span>Classes</span>
                       </a>                      
                     </li>                    
                     <li >
-                      <a href="#"  >
+                      <a href="queries.php"  >
                         <b class="badge bg-danger pull-right"></b>
                         <i class="fa fa-question-circle icon">
-                          <b class="bg-primary dker"></b>
+                          <b class="bg-warning"></b>
                         </i>
                         <span>Queries</span>
                       </a>
                     </li>
-                    
+                    <li >
+                        <a href="calendar.php"  >
+                          <i class="fa fa-calendar icon">
+                            <b class="bg-info"></b>
+                          </i>
+                          <span>Calendar</span>
+                        </a>
+                      </li>
                     <li >
                         <a href="#"  >
                           <i class="fa fa-bell icon">
-                            <b class="bg-danger"></b>
+                            <b class="bg-primary"></b>
                           </i>
                           <span>Notifications</span>
                         </a>
@@ -60,11 +75,19 @@
                       <li >
                           <a href="assignments.php"  >
                             <i class="fa fa-pencil icon">
-                              <b class="bg-primary"></b>
+                              <b class="bg-danger"></b>
                             </i>
                             <span>Assignments</span>
                           </a>
-                        </li>                        
+                        </li>   
+                        <li >
+                          <a href="notices.php"  >
+                            <i class="fa fa-file-text icon">
+                              <b class="bg-warning"></b>
+                            </i>
+                            <span>Notices</span>
+                          </a>
+                        </li>                      
                   </ul>
                 </nav>
                 <!-- / nav -->

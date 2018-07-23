@@ -36,17 +36,18 @@ require_once '../../connections/db.php';
                                     All Members</h3>
                             </div>                           
                             <div class="module-body">
-                            <?php 				
-                                $query = "SELECT * FROM users ORDER BY 1 DESC ";
-                                $result = mysqli_query($con,$query);
-                                while ($row = mysqli_fetch_array($result)) {
-                                 $id = $row['id'];
-                                 $name= $row['name'];
-                                 $type = $row['type'];
-                                 $image= $row['image'];                                   
-                             ?>                          
+                                                   
                                 <div class="row-fluid">
-                                    <div class="span6">
+                                        <?php 				
+                                        $query = "SELECT * FROM users ORDER BY 1 DESC ";
+                                        $result = mysqli_query($con,$query);
+                                        while ($row = mysqli_fetch_array($result)) {
+                                        $id = $row['id'];
+                                        $name= $row['name'];
+                                        $type = $row['type'];
+                                        $image= $row['image'];                                   
+                                    ?> 
+                                    <div class="span6" style="width: 30%">
                                         <div class="media user">
                                             <a class="media-avatar pull-left" href="#">
                                             <img src="../../storage/<?php echo $image;?>"/>
@@ -56,35 +57,18 @@ require_once '../../connections/db.php';
                                                 <?php echo $name; ?></h3>
                                                 <p>
                                                     <small class="muted"><?php echo $type; ?></small></p>
-                                                <div class="media-option btn-group shaded-icon">
-                                                                                                     
+                                                <div class="media-option btn-group shaded-icon">                                                                                                     
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="span6">
-                                        <div class="media user">
-                                            <a class="media-avatar pull-left" href="#">
-                                                <img src="images/user.png">
-                                            </a>
-                                            <div class="media-body">
-                                                <h3 class="media-title">
-                                                    <?php echo $name; ?></h3>
-                                                <p>
-                                                    <small class="muted"><?php echo $type; ?></small></p>
-                                                <div class="media-option btn-group shaded-icon">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <?php 
+									}
+								?> 
+                                  </div> 
                                 
                                 <!--/.row-fluid-->
-                                <br />
-                                <?php 
-									}
-								?>                             
+                                          
                                 <!--/.row-fluid-->
                                 
                               

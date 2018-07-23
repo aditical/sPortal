@@ -10,6 +10,7 @@
                             
                             <ul class="widget widget-menu unstyled">
                                 <li><a href="view_news.php"><i class="menu-icon icon-bullhorn"></i>News</a></li>
+                                <li><a href="view_notices.php"><i class="menu-icon icon-file"></i>Notices</a></li>
                                 <li><a href="batch.php"><i class="menu-icon icon-save"></i>Class</a></li>    
                                 <li><a href="view_posts.php"><i class="menu-icon icon-paste"></i>Posts</a></li>
                                 <li><a href="users.php"><i class="menu-icon icon-user"></i>Users </a></li>                               
